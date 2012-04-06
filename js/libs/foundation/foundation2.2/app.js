@@ -1,3 +1,4 @@
+/* Foundation v2.2 http://foundation.zurb.com */
 jQuery(document).ready(function ($) {
 
 	/* Use this js doc for all application specific JS */
@@ -8,15 +9,12 @@ jQuery(document).ready(function ($) {
 	function activateTab($tab) {
 		var $activeTab = $tab.closest('dl').find('a.active'),
 				contentLocation = $tab.attr("href") + 'Tab';
-				
-		// Strip off the current url that IE adds
-		contentLocation = contentLocation.replace(/^.+#/, '#');
 
 		//Make Tab Active
 		$activeTab.removeClass('active');
 		$tab.addClass('active');
 
-    //Show Tab Content
+    	//Show Tab Content
 		$(contentLocation).closest('.tabs-content').children('li').hide();
 		$(contentLocation).css('display', 'block');
 	}
@@ -31,7 +29,6 @@ jQuery(document).ready(function ($) {
 
 	if (window.location.hash) {
 		activateTab($('a[href="' + window.location.hash + '"]'));
-		$.foundation.customForms.appendCustomMarkup();
 	}
 
 	/* ALERT BOXES ------------ */
@@ -94,4 +91,5 @@ jQuery(document).ready(function ($) {
 	/* DISABLED BUTTONS ------------- */
 	/* Gives elements with a class of 'disabled' a return: false; */
   
+
 });
